@@ -1,11 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import AuthOptions from './screens/auth/AuthOptions';
+import Signup from './screens/auth/Signup';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <AuthOptions/>
+      <StatusBar backgroundColor='#181a21' barStyle='light-content'/>
+      {/* <AuthOptions/> */}
+      <Signup/>
     </View>
   );
 }

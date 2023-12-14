@@ -32,3 +32,28 @@ export const buttonStyles = StyleSheet.create({
         columnGap: 10,
     }
 })
+
+
+export const inputStyles = StyleSheet.create({
+    
+    container: {
+        backgroundColor: '#1f222a',
+        flexDirection: 'row',
+        height: 60,
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        alignSelf: 'stretch',
+        borderRadius: 20,
+        borderWidth: 1,
+        borderColor: '#1f222a',
+        columnGap: 10,
+        paddingHorizontal: 20
+    },
+
+    input: {
+        color: '#fff',
+        flex: 1,
+        fontSize: 16
+    }
+
+})
