@@ -1,13 +1,16 @@
 import { StyleSheet, Text, View } from "react-native"
+import MeetingItem from "./MeetingItem"
 
 const HomeMeetingHistory = () => {
   return (
-   <View style={styles.container}>
-     <View style={styles.header}>
-      <Text style={styles.title}>Meeting History</Text>
-      <Text style={styles.seeAll}>Sell all</Text>
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Meeting History</Text>
+        <Text style={styles.seeAll}>Sell all</Text>
       </View>
-   </View>
+
+      <MeetingItem/>
+    </View>
   )
 }
 
@@ -17,8 +20,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
+    borderTopWidth: 0.5,
     borderColor: '#ccc',
     height: 50,
     flexDirection: 'row',
@@ -26,7 +28,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
 
-  title:  {
+  title: {
     color: '#fff',
     fontSize: 18
   },
