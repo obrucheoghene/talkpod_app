@@ -1,6 +1,5 @@
 import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native"
-import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
-
+import { FontAwesome } from '@expo/vector-icons';
 
 import { buttonStyles, inputStyles } from "../../styles/styles";
 import Divider from "../../components/Divider";
@@ -15,17 +14,17 @@ const Signin = () => {
 
 
             <View style={inputStyles.container}>
-                <FontAwesome name='envelope' size={18} color="white" />
+                <FontAwesome name='envelope' size={18} color="#ccc" />
                 <TextInput placeholder='Email' style={inputStyles.input}
                     placeholderTextColor={'#ccc'} />
             </View>
 
             <View style={inputStyles.container}>
-                <FontAwesome name='lock' size={22} color="white" />
+                <FontAwesome name='lock' size={22} color="#ccc" />
 
                 <TextInput placeholder='Password' style={inputStyles.input}
                     placeholderTextColor={'#ccc'} />
-                <FontAwesome name='eye' size={22} color="white" />
+                <FontAwesome name='eye' size={22} color="#ccc" />
             </View>
 
             <Pressable style={buttonStyles.blueContainer}>
