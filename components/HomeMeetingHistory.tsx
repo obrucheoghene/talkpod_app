@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View } from "react-native"
+import { StyleSheet, Text, View, ScrollView } from "react-native"
 import MeetingItem from "./MeetingItem"
+import { meetings } from "../utils/data"
 
 const HomeMeetingHistory = () => {
   return (
@@ -9,7 +10,9 @@ const HomeMeetingHistory = () => {
         <Text style={styles.seeAll}>Sell all</Text>
       </View>
 
-      <MeetingItem/>
+      <ScrollView style={styles.scrollView}>
+        {meetings.map(meeting => <MeetingItem key={meeting.id} {...meeting}/>)}
+      </ScrollView>
     </View>
   )
 }
@@ -37,7 +40,11 @@ const styles = StyleSheet.create({
     color: '#2d71fe',
     fontSize: 16
 
+  },
+  scrollView: {
+
   }
+  
 })
 
 

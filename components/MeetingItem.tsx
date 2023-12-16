@@ -1,17 +1,19 @@
 import { StyleSheet, View, Text, Pressable } from 'react-native'
+import { Meeting } from '../types/interfaces'
 
-const MeetingItem = () => {
+
+const MeetingItem:React.FC<Meeting> = ({id, title, status, date, time}) => {
   return (
     <View style={styles.container}>
-        <Text style={styles.subtitle}>14:02</Text>
+        <Text style={styles.subtitle}>{time}</Text>
         <View style={styles.body}>
-            <Text style={styles.subtitle}>Date</Text>
-            <Text style={styles.title}>Title</Text>
-            <Text style={styles.subtitle}>Meeting Id</Text>
+            <Text style={styles.subtitle}>{date}</Text>
+            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.subtitle}>Meeting ID: {id}</Text>
         </View>
         <Pressable style={styles.button}>
             <Text style={styles.buttonText}>
-                Completed
+                {status}
             </Text>
         </Pressable>
     </View>
@@ -22,10 +24,10 @@ const styles = StyleSheet.create({
     container: {
         borderTopWidth: 0.5,
         borderColor: '#ccc',
-        height: 80,
         flexDirection: 'row',
         columnGap: 30,
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingVertical: 12
     },
     body: {
         flexGrow: 1,
@@ -36,7 +38,8 @@ const styles = StyleSheet.create({
         fontSize: 18
     },
     subtitle: {
-        color: '#ccc'
+        color: '#ccc',
+        fontSize: 12
     },
     button: {
         borderColor: '#2d71fe',
@@ -47,6 +50,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: '#2d71fe',
+        fontSize: 12
     }
 
 })
