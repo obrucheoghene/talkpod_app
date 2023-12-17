@@ -46,9 +46,24 @@ export const meetings: Meeting[] = [
     },
     {
         id: '753 745 855',
-        title: 'Interview Meeting',
+        title: 'Project Review',
         status: 'Completed',
         date: 'Dec 08 2023',
         time: '19:20'
     },
+    {
+        id: '634 544 855',
+        title: 'Coffee Chat',
+        status: 'Completed',
+        date: 'Dec 08 2023',
+        time: '15:20'
+    },
+    {
+        id: '323 666 889',
+        title: 'Stand Up',
+        status: 'Completed',
+        date: 'Dec 08 2023',
+        time: '11:40'
+    },
+
 ]

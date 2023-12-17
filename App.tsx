@@ -3,6 +3,7 @@ import AuthOptions from './screens/auth/AuthOptions';
 import Signup from './screens/auth/Signup';
 import Signin from './screens/auth/Signin';
 import Home from './screens/home/Home';
+import MeetingHistory from './screens/MeetingHistory/MeetingHistory';
 
 export default function App() {
   return (
@@ -12,7 +13,8 @@ export default function App() {
       {/* <AuthOptions/> */}
       {/* <Signup /> */}
       {/* <Signin/> */}
-      <Home />
+      {/* <Home /> */}
+      <MeetingHistory/>
 
     </SafeAreaView>
 
@@ -23,6 +25,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#181a21',
-    paddingTop: 10
+    paddingTop: StatusBar.currentHeight
   },
 });
