@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View } from "react-native"
+import { StatusBar, StyleSheet, Text, TextInput, View } from "react-native"
 import { FontAwesome } from '@expo/vector-icons';
 
 import HomeHeader from "../../components/HomeHeader"
@@ -9,6 +9,8 @@ import HomeMeetingHistory from "../../components/HomeMeetingHistory";
 const Home = () => {
     return (
         <View style={styles.container}>
+            <StatusBar backgroundColor='#181a21' barStyle='light-content' />
+
             <HomeHeader />
 
             <View style={inputStyles.container}>
@@ -25,6 +27,7 @@ const Home = () => {
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: '#181a21',
         paddingHorizontal: 20,
         flex: 1,
         rowGap: 15,
