@@ -5,10 +5,20 @@ import HomeHeader from "../../components/HomeHeader"
 import { inputStyles } from "../../styles/styles"
 import HomeOptions from "../../components/HomeOptions";
 import HomeMeetingHistory from "../../components/HomeMeetingHistory";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+
 
 const Home = () => {
+    const insets = useSafeAreaInsets()
+
+    const safeArea =  {
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+        paddingLeft: insets.left,
+        paddingRight: insets.right
+    }
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, safeArea] }>
             <StatusBar backgroundColor='#181a21' barStyle='light-content' />
 
             <HomeHeader />
@@ -30,7 +40,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#181a21',
         paddingHorizontal: 20,
         flex: 1,
-        rowGap: 15,
+        rowGap: 15,    
     },
 
 })
