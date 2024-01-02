@@ -3,12 +3,12 @@ import { theme as themeValue } from "../types/interfaces";
 import { darkTheme, lightTheme } from "../utils/theme";
 
 interface AppContextValue {
-    theme: Record<string, any>
+    theme: typeof darkTheme
     themeName: themeValue,
     setThemeName: React.Dispatch<React.SetStateAction<themeValue>>;
 }
 export const AppContext = createContext<AppContextValue>({
-    theme: {},
+    theme: darkTheme,
     themeName: 'dark',
     setThemeName: () => { }
 })
@@ -19,7 +19,7 @@ interface AppProviderProps {
 
 const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     const [themeName, setThemeName] = useState<themeValue>('dark');
-    const [theme, setTheme] = useState<Record<string, any>>({})
+    const [theme, setTheme] = useState<typeof darkTheme>(darkTheme)
 
     useEffect(() => {
         themeName === 'dark' ? setTheme(darkTheme) : setTheme(lightTheme);

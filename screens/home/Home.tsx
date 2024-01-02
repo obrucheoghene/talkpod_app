@@ -6,19 +6,14 @@ import { inputStyles } from "../../styles/styles"
 import HomeOptions from "../../components/HomeOptions";
 import HomeMeetingHistory from "../../components/HomeMeetingHistory";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import SafeAreaInset from "../../components/SafeAreaInset";
 
 
 const Home = () => {
-    const insets = useSafeAreaInsets()
 
-    const safeArea =  {
-        paddingTop: insets.top,
-        paddingBottom: insets.bottom,
-        paddingLeft: insets.left,
-        paddingRight: insets.right
-    }
     return (
-        <View style={[styles.container, safeArea] }>
+        <SafeAreaInset>
+        <View style={[styles.container] }>
             <StatusBar backgroundColor='#181a21' barStyle='light-content' />
 
             <HomeHeader />
@@ -32,6 +27,7 @@ const Home = () => {
 
             <HomeMeetingHistory/>
         </View>
+        </SafeAreaInset>
     )
 }
 
