@@ -7,36 +7,38 @@ import MeetingHistory from './screens/MeetingHistory/MeetingHistory';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import AppProvider from './context/AppContext';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName='Home'
-          screenOptions={{
-            headerStyle: {
-              backgroundColor: '#181a21',
-            },
-            headerTintColor: '#fff'
-          }}>
-          <Stack.Screen name='Home' component={Home}
-            options={{
-              headerShown: false
-            }} />
+    <AppProvider>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName='Home'
+            screenOptions={{
+              headerStyle: {
+                backgroundColor: '#181a21',
+              },
+              headerTintColor: '#fff'
+            }}>
+            <Stack.Screen name='Home' component={Home}
+              options={{
+                headerShown: false
+              }} />
 
-          <Stack.Screen name='AuthOptions' component={AuthOptions} />
+            <Stack.Screen name='AuthOptions' component={AuthOptions} />
 
-          <Stack.Screen name='Signup' component={Signup} />
+            <Stack.Screen name='Signup' component={Signup} />
 
-          <Stack.Screen name='Signin' component={Signin} />
-          <Stack.Screen name='MeetingHistory' component={MeetingHistory} />
-        </Stack.Navigator>
+            <Stack.Screen name='Signin' component={Signin} />
+            <Stack.Screen name='MeetingHistory' component={MeetingHistory} />
+          </Stack.Navigator>
 
-      </NavigationContainer>
-    </SafeAreaProvider>
-
+        </NavigationContainer>
+      </SafeAreaProvider>
+    </AppProvider>
   );
 }
 
