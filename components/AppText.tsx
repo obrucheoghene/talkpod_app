@@ -1,6 +1,6 @@
 import React, { ReactNode, useContext } from 'react'
 import { Text, TextStyle } from 'react-native'
-import { AppContext } from '../../context/AppContext'
+import { AppContext } from '../context/AppContext'
 
 interface AppTextProps {
   children: ReactNode,

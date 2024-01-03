@@ -6,7 +6,7 @@ import { inputStyles } from "../../styles/styles"
 import HomeOptions from "../../components/HomeOptions";
 import HomeMeetingHistory from "../../components/HomeMeetingHistory";
 
-import ScreenContainer from "../../components/containers/ScreenContainer";
+import ScreenContainer from "../../components/ScreenContainer";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 

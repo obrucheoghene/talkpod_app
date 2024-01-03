@@ -7,10 +7,11 @@ import google from '../../assets/google-logo.png'
 import { buttonStyles, generalStyles } from "../../styles/styles"
 import Divider from "../../components/Divider"
 import ActionText from "./ActionText"
-import ScreenContainer from "../../components/containers/ScreenContainer"
+import ScreenContainer from "../../components/ScreenContainer"
 import { useContext } from "react"
 import { AppContext } from "../../context/AppContext"
-import AppText from "../../components/text/AppText"
+import AppText from "../../components/AppText"
+import AppButton from "../../components/AppButton"
 
 const AuthOptions = () => {
   const {theme} = useContext(AppContext)
@@ -24,24 +25,24 @@ const AuthOptions = () => {
       {/* <Image source={secureLogin} style={styles.image} /> */}
       <AppText style={{fontSize: theme.sizes.xl}}>Get started</AppText>
       
-      <Pressable style={buttonStyles.darkContainer}>
+      <AppButton>
         <Image source={kingschat} style={styles.icon} />
-        <View><Text style={styles.text}>Continue with Kingschat </Text></View>
-      </Pressable>
+        <View><AppText style={{fontSize: theme.sizes.m}} >Continue with Kingschat </AppText></View>
+      </AppButton>
 
-      <Pressable style={buttonStyles.darkContainer}>
+      <AppButton>
         <Image source={google} style={styles.icon} />
-        <View><Text style={styles.text}>Continue with Google</Text></View>
-      </Pressable>
-      <Pressable style={buttonStyles.darkContainer}>
+        <View><AppText style={{fontSize: theme.sizes.m}}>Continue with Google</AppText></View>
+      </AppButton>
+      <AppButton>
         <Image source={apple} style={styles.icon} />
-        <View><Text style={styles.text}>Continue with Apple</Text></View>
-      </Pressable>
+        <View><AppText style={{fontSize: theme.sizes.m}}>Continue with Apple</AppText></View>
+      </AppButton>
 
       <Divider text="or" />
-      <Pressable style={buttonStyles.blueContainer}>
-        <Text style={styles.text}>Sign in with password</Text>
-      </Pressable>
+      <AppButton style={buttonStyles.blueContainer}>
+        <AppText style={{fontSize: theme.sizes.m}}>Sign in with password</AppText>
+      </AppButton>
 
       <ActionText question="Don't have an account?" actionText="Sign up"/>
  
