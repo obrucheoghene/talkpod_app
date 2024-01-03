@@ -48,14 +48,7 @@ const AuthOptions = () => {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    rowGap: 15,
-    padding: 20,
-    
-  },
+
   image: {
     width: 100,
     height: 100,

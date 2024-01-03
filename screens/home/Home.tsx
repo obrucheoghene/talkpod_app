@@ -16,8 +16,6 @@ const Home = () => {
 
     return (
         <ScreenContainer styles={{
-            justifyContent: 'center',
-            alignItems: 'center',
             rowGap: theme.spacing.b,
           }}> 
 
