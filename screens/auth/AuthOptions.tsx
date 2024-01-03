@@ -10,6 +10,7 @@ import ActionText from "./ActionText"
 import ScreenContainer from "../../components/containers/ScreenContainer"
 import { useContext } from "react"
 import { AppContext } from "../../context/AppContext"
+import AppText from "../../components/text/AppText"
 
 const AuthOptions = () => {
   const {theme} = useContext(AppContext)
@@ -21,7 +22,8 @@ const AuthOptions = () => {
       rowGap: theme.spacing.b,
     }}>
       {/* <Image source={secureLogin} style={styles.image} /> */}
-      <Text style={styles.title}>Get started</Text>
+      <AppText style={{fontSize: theme.sizes.xl}}>Get started</AppText>
+      
       <Pressable style={buttonStyles.darkContainer}>
         <Image source={kingschat} style={styles.icon} />
         <View><Text style={styles.text}>Continue with Kingschat </Text></View>

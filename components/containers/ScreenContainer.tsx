@@ -1,9 +1,9 @@
 import React, { ReactNode, useContext } from 'react'
-import { StatusBar, View } from 'react-native'
+import { StatusBar, View, ViewStyle } from 'react-native'
 import { AppContext } from '../../context/AppContext'
 
 interface ScreenContainerProps {
-    styles: Record<string, string|number>
+    styles: ViewStyle
     children: ReactNode,
 }
 

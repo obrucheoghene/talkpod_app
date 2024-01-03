@@ -24,6 +24,14 @@ export const darkTheme = {
         l: 24,
         xl: 48,
     },
+    sizes: {
+        xs: 4,
+        s: 8,
+        b: 16,
+        m: 18,
+        l: 24,
+        xl: 48,
+    },
     
 }
 
