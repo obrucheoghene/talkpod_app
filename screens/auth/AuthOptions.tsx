@@ -7,10 +7,19 @@ import google from '../../assets/google-logo.png'
 import { buttonStyles, generalStyles } from "../../styles/styles"
 import Divider from "../../components/Divider"
 import ActionText from "./ActionText"
+import ScreenContainer from "../../components/containers/ScreenContainer"
+import { useContext } from "react"
+import { AppContext } from "../../context/AppContext"
 
 const AuthOptions = () => {
+  const {theme} = useContext(AppContext)
+
   return (
-    <View style={styles.container}>
+    <ScreenContainer styles={{
+      justifyContent: 'center',
+      alignItems: 'center',
+      rowGap: theme.spacing.b,
+    }}>
       {/* <Image source={secureLogin} style={styles.image} /> */}
       <Text style={styles.title}>Get started</Text>
       <Pressable style={buttonStyles.darkContainer}>
@@ -33,7 +42,8 @@ const AuthOptions = () => {
       </Pressable>
 
       <ActionText question="Don't have an account?" actionText="Sign up"/>
-    </View>
+ 
+    </ScreenContainer>
   )
 }
 
@@ -44,6 +54,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     rowGap: 15,
     padding: 20,
+    
   },
   image: {
     width: 100,

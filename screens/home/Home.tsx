@@ -1,20 +1,25 @@
-import { StatusBar, StyleSheet, Text, TextInput, View } from "react-native"
+import { StyleSheet, Text, TextInput, View } from "react-native"
 import { FontAwesome } from '@expo/vector-icons';
 
 import HomeHeader from "../../components/HomeHeader"
 import { inputStyles } from "../../styles/styles"
 import HomeOptions from "../../components/HomeOptions";
 import HomeMeetingHistory from "../../components/HomeMeetingHistory";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import SafeAreaInset from "../../components/SafeAreaInset";
+
+import ScreenContainer from "../../components/containers/ScreenContainer";
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 
 
 const Home = () => {
+    const {theme} = useContext(AppContext)
 
     return (
-        <SafeAreaInset>
-        <View style={[styles.container] }>
-            <StatusBar backgroundColor='#181a21' barStyle='light-content' />
+        <ScreenContainer styles={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            rowGap: theme.spacing.b,
+          }}> 
 
             <HomeHeader />
 
@@ -26,8 +31,7 @@ const Home = () => {
             <HomeOptions/>
 
             <HomeMeetingHistory/>
-        </View>
-        </SafeAreaInset>
+        </ScreenContainer>
     )
 }
 

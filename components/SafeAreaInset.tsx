@@ -1,5 +1,5 @@
 import { ReactNode, useContext } from "react"
-import { StyleSheet, View } from "react-native"
+import {  View } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { AppContext } from "../context/AppContext"
 

@@ -19,9 +19,10 @@ export const darkTheme = {
     spacing: {
         xs: 4,
         s: 8,
-        m: 16,
+        b: 16,
+        m: 18,
         l: 24,
-        xl: 40,
+        xl: 48,
     },
     
 }
