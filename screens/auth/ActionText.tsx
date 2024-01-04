@@ -1,15 +1,21 @@
 import { StyleSheet, Text, View, Pressable } from "react-native"
+import AppText from "../../components/AppText"
+import { useContext } from "react"
+import { AppContext } from "../../context/AppContext"
 
 interface ActionTextProps {
     question: string,
     actionText: string
 }
 const ActionText: React.FC<ActionTextProps> = ({ question, actionText }) => {
+    const {theme} = useContext(AppContext);
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>{question}</Text>
+            <AppText >{question}</AppText>
 
-            <Pressable><Text style={styles.actionText}>{actionText}</Text></Pressable>
+            <Pressable><AppText style={{
+                color: theme.colors.primary
+            }}>{actionText}</AppText></Pressable>
         </View>
     )
 }

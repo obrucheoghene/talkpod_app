@@ -4,8 +4,8 @@ import { AppContext } from "../context/AppContext"
 
 interface AppButtonProps {
   children: ReactNode,
-  style?: ViewStyle
-  onPress?: () => {}
+  style?: ViewStyle,
+  onPress?: () => {},
 }
 
 const AppButton: React.FC<AppButtonProps> = ({style, onPress, children}) => {

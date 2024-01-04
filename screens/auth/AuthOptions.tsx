@@ -27,21 +27,24 @@ const AuthOptions = () => {
       
       <AppButton>
         <Image source={kingschat} style={styles.icon} />
-        <View><AppText style={{fontSize: theme.sizes.m}} >Continue with Kingschat </AppText></View>
+        <View><AppText  >Continue with Kingschat </AppText></View>
       </AppButton>
 
       <AppButton>
         <Image source={google} style={styles.icon} />
-        <View><AppText style={{fontSize: theme.sizes.m}}>Continue with Google</AppText></View>
+        <View><AppText >Continue with Google</AppText></View>
       </AppButton>
       <AppButton>
         <Image source={apple} style={styles.icon} />
-        <View><AppText style={{fontSize: theme.sizes.m}}>Continue with Apple</AppText></View>
+        <View><AppText >Continue with Apple</AppText></View>
       </AppButton>
 
       <Divider text="or" />
-      <AppButton style={buttonStyles.blueContainer}>
-        <AppText style={{fontSize: theme.sizes.m}}>Sign in with password</AppText>
+      <AppButton style={{
+        backgroundColor: theme.colors.primary,
+        borderRadius: theme.sizes.s60
+      }}>
+        <AppText >Sign in with password</AppText>
       </AppButton>
 
       <ActionText question="Don't have an account?" actionText="Sign up"/>

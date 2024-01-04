@@ -1,14 +1,17 @@
-import React from "react"
+import React, { useContext } from "react"
 import { View, Text, StyleSheet } from "react-native"
+import AppText from "./AppText"
+import { AppContext } from "../context/AppContext"
 
 interface DividerProps {
     text: string
 }
 const Divider: React.FC<DividerProps> = ({text}) => {
+    const {theme} = useContext(AppContext);
   return (
     <View style={styles.container}>
         <View style={styles.line}></View>
-        <View><Text style={styles.text}>{text}</Text></View>
+        <View><AppText style={{fontSize: theme.sizes.m}}>{text}</AppText></View>
         <View style={styles.line}></View>
     </View>
   )
