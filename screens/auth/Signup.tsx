@@ -40,7 +40,8 @@ const Signup = () => {
 
             <AuthIcons/>
 
-            <ActionText question="Already have an account?" actionText="Sign in"/>
+            <ActionText question="Already have an account?" actionText="Sign in" 
+            onPress={() => {}}/>
         </View>
     )
 }

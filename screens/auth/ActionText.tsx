@@ -5,7 +5,8 @@ import { AppContext } from "../../context/AppContext"
 
 interface ActionTextProps {
     question: string,
-    actionText: string
+    actionText: string,
+    onPress: () => void
 }
 const ActionText: React.FC<ActionTextProps> = ({ question, actionText }) => {
     const {theme} = useContext(AppContext);

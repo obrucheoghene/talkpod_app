@@ -5,7 +5,7 @@ import { AppContext } from "../context/AppContext"
 interface AppButtonProps {
   children: ReactNode,
   style?: ViewStyle,
-  onPress?: () => {},
+  onPress?: () => void,
 }
 
 const AppButton: React.FC<AppButtonProps> = ({style, onPress, children}) => {

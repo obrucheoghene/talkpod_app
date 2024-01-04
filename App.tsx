@@ -10,7 +10,14 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AppProvider from './context/AppContext';
 import SafeAreaInset from './components/SafeAreaInset';
 
-const Stack = createNativeStackNavigator();
+export type  ScreenParams = {
+  Home: undefined,
+  AuthOptions: undefined,
+  Signup: undefined,
+  Signin: undefined,
+  MeetingHistory: undefined,
+}
+const Stack = createNativeStackNavigator<ScreenParams>();
 
 export default function App() {
   return (

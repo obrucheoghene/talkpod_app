@@ -12,8 +12,13 @@ import { useContext } from "react"
 import { AppContext } from "../../context/AppContext"
 import AppText from "../../components/AppText"
 import AppButton from "../../components/AppButton"
+import { NativeStackScreenProps } from "@react-navigation/native-stack"
+import { ScreenParams } from "../../App"
 
-const AuthOptions = () => {
+
+type AuthOptionsProps = NativeStackScreenProps<ScreenParams, 'AuthOptions'>;
+
+const AuthOptions = ({navigation}: AuthOptionsProps) => {
   const {theme} = useContext(AppContext)
 
   return (
@@ -43,11 +48,13 @@ const AuthOptions = () => {
       <AppButton style={{
         backgroundColor: theme.colors.primary,
         borderRadius: theme.sizes.s60
-      }}>
+      }} onPress={() =>  navigation.navigate("Home")}>
         <AppText >Sign in with password</AppText>
       </AppButton>
 
-      <ActionText question="Don't have an account?" actionText="Sign up"/>
+      <ActionText question="Don't have an account?" 
+      actionText="Sign up"
+      onPress={() => navigation.navigate('Signup')}/>
  
     </ScreenContainer>
   )
