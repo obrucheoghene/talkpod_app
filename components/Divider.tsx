@@ -10,9 +10,9 @@ const Divider: React.FC<DividerProps> = ({text}) => {
     const {theme} = useContext(AppContext);
   return (
     <View style={styles.container}>
-        <View style={styles.line}></View>
+        <View style={{...styles.line, backgroundColor: theme.colors.dark3}}></View>
         <View><AppText style={{fontSize: theme.sizes.m}}>{text}</AppText></View>
-        <View style={styles.line}></View>
+        <View style={{...styles.line, backgroundColor: theme.colors.dark3}}></View>
     </View>
   )
 }
