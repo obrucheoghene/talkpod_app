@@ -10,6 +10,7 @@ import { ScreenParams } from "../../App";
 import ScreenContainer from "../../components/ScreenContainer";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
+import AppText from "../../components/AppText";
 
 type ScreenProps = NativeStackScreenProps<ScreenParams, 'Signin'>;
 
@@ -42,14 +43,15 @@ const Signin = ({ navigation }: ScreenProps) => {
                 <Text style={styles.text}>Sign in</Text>
             </Pressable>
 
-            <Text style={styles.forgotPasswordText}>Forgot your Password?</Text>
+            <AppText style={{color: theme.colors.primary}}>Forgot your Password?</AppText>
 
             <Divider text="or continue with" />
 
             <AuthIcons />
 
-            <ActionText question="Already have an account?" actionText="Sign in"
-                onPress={() => navigation.navigate('Signin')} />
+            <ActionText question="Don't have an account?"
+                actionText="Sign up"
+                onPress={() => navigation.navigate('Signup')} />
         </ScreenContainer>
     )
 }
