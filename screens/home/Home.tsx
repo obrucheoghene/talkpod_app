@@ -15,7 +15,7 @@ const Home = () => {
     const {theme} = useContext(AppContext)
 
     return (
-        <ScreenContainer styles={{
+        <ScreenContainer style={{
             rowGap: theme.spacing.b,
           }}> 
 

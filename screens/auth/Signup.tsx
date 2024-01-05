@@ -6,11 +6,26 @@ import { buttonStyles, inputStyles } from "../../styles/styles";
 import Divider from "../../components/Divider";
 import AuthIcons from "../../components/AuthIcons";
 import ActionText from "./ActionText";
+import ScreenContainer from "../../components/ScreenContainer";
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
+import AppText from "../../components/AppText";
+import AppButton from "../../components/AppButton";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { ScreenParams } from "../../App";
 
-const Signup = () => {
+type ScreenProps = NativeStackScreenProps<ScreenParams, 'Signup'>;
+
+const Signup = ({ navigation }: ScreenProps) => {
+    const { theme } = useContext(AppContext)
+
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Create New Account</Text>
+        <ScreenContainer style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            rowGap: theme.spacing.b,
+        }}>
+            <AppText style={{ fontSize: theme.sizes.l }}>Create New Account</AppText>
 
             <View style={inputStyles.container}>
                 <FontAwesome name='user' size={22} color="#ccc" />
@@ -32,17 +47,20 @@ const Signup = () => {
                 <FontAwesome name='eye' size={22} color="#ccc" />
             </View>
 
-            <Pressable style={buttonStyles.blueContainer}>
-                <Text style={styles.text}>Sign up</Text>
-            </Pressable>
+            <AppButton style={{
+                backgroundColor: theme.colors.primary,
+                borderRadius: theme.sizes.s60
+            }} onPress={() => {console.log('Sign up')}}>
+                <AppText >Sign up</AppText>
+            </AppButton>
 
             <Divider text="or continue with" />
 
-            <AuthIcons/>
+            <AuthIcons />
 
-            <ActionText question="Already have an account?" actionText="Sign in" 
-            onPress={() => {}}/>
-        </View>
+            <ActionText question="Already have an account?" actionText="Sign in"
+                onPress={() => navigation.navigate('Signin')} />
+        </ScreenContainer>
     )
 }
 

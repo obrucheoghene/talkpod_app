@@ -5,14 +5,25 @@ import { buttonStyles, inputStyles } from "../../styles/styles";
 import Divider from "../../components/Divider";
 import AuthIcons from "../../components/AuthIcons";
 import ActionText from "./ActionText";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { ScreenParams } from "../../App";
+import ScreenContainer from "../../components/ScreenContainer";
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 
-const Signin = () => {
+type ScreenProps = NativeStackScreenProps<ScreenParams, 'Signin'>;
+
+const Signin = ({ navigation }: ScreenProps) => {
+    const { theme } = useContext(AppContext)
+
     return (
-        <View style={styles.container}>
+        <ScreenContainer style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            rowGap: theme.spacing.b,
+        }}>
+
             <Text style={styles.title}>Login to Your Account</Text>
-
-
-
             <View style={inputStyles.container}>
                 <FontAwesome name='envelope' size={18} color="#ccc" />
                 <TextInput placeholder='Email' style={inputStyles.input}
@@ -35,10 +46,11 @@ const Signin = () => {
 
             <Divider text="or continue with" />
 
-            <AuthIcons/>
+            <AuthIcons />
 
-            <ActionText question="Already have an account?" actionText="Sign in"/>
-        </View>
+            <ActionText question="Already have an account?" actionText="Sign in"
+                onPress={() => navigation.navigate('Signin')} />
+        </ScreenContainer>
     )
 }
 

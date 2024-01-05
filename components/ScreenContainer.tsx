@@ -3,17 +3,17 @@ import { StatusBar, View, ViewStyle } from 'react-native'
 import { AppContext } from '../context/AppContext'
 
 interface ScreenContainerProps {
-    styles: ViewStyle
+    style: ViewStyle
     children: ReactNode,
 }
 
-const ScreenContainer: React.FC<ScreenContainerProps> = ({styles, children}) => {
+const ScreenContainer: React.FC<ScreenContainerProps> = ({style, children}) => {
     const {theme, themeName} = useContext(AppContext)
     const containerStyle = {
         flex: 1,
         backgroundColor: theme.colors.background,
         paddingHorizontal: theme.spacing.l,
-        ...styles
+        ...style
 
     }
   return (

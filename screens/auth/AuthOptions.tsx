@@ -22,7 +22,7 @@ const AuthOptions = ({navigation}: AuthOptionsProps) => {
   const {theme} = useContext(AppContext)
 
   return (
-    <ScreenContainer styles={{
+    <ScreenContainer style={{
       justifyContent: 'center',
       alignItems: 'center',
       rowGap: theme.spacing.b,
@@ -48,7 +48,7 @@ const AuthOptions = ({navigation}: AuthOptionsProps) => {
       <AppButton style={{
         backgroundColor: theme.colors.primary,
         borderRadius: theme.sizes.s60
-      }} onPress={() =>  navigation.navigate("Home")}>
+      }} onPress={() =>  navigation.navigate("Signin")}>
         <AppText >Sign in with password</AppText>
       </AppButton>
 

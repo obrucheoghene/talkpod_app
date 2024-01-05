@@ -8,13 +8,13 @@ interface ActionTextProps {
     actionText: string,
     onPress: () => void
 }
-const ActionText: React.FC<ActionTextProps> = ({ question, actionText }) => {
+const ActionText: React.FC<ActionTextProps> = ({ question, actionText, onPress }) => {
     const {theme} = useContext(AppContext);
     return (
         <View style={styles.container}>
             <AppText >{question}</AppText>
 
-            <Pressable><AppText style={{
+            <Pressable onPress={onPress}><AppText style={{
                 color: theme.colors.primary
             }}>{actionText}</AppText></Pressable>
         </View>
