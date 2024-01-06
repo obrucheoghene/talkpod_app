@@ -27,7 +27,7 @@ const AuthOptions = ({navigation}: AuthOptionsProps) => {
       alignItems: 'center',
       rowGap: theme.spacing.b,
     }}>
-      <Image source={DarkCloud} style={styles.image} />
+      <DarkCloud height={178} width={260}  />
       <AppText style={{fontSize: theme.sizes.xl}}>Get started</AppText>
       
       <AppButton>
