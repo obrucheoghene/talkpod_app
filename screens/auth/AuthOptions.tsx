@@ -4,7 +4,7 @@ import { Button, Image, Pressable, StyleSheet, Text, View } from "react-native"
 import kingschat from '../../assets/kingschat-logo.png'
 import apple from '../../assets/apple-logo.png'
 import google from '../../assets/google-logo.png'
-import { buttonStyles, generalStyles } from "../../styles/styles"
+import DarkCloud from '../../assets/svg/dark-cloud.svg'
 import Divider from "../../components/Divider"
 import ActionText from "./ActionText"
 import ScreenContainer from "../../components/ScreenContainer"
@@ -27,7 +27,7 @@ const AuthOptions = ({navigation}: AuthOptionsProps) => {
       alignItems: 'center',
       rowGap: theme.spacing.b,
     }}>
-      {/* <Image source={secureLogin} style={styles.image} /> */}
+      <Image source={DarkCloud} style={styles.image} />
       <AppText style={{fontSize: theme.sizes.xl}}>Get started</AppText>
       
       <AppButton>
