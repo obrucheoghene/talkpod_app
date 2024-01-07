@@ -1,13 +1,10 @@
-import React, { ReactNode, useContext } from 'react'
-import { StatusBar, View, ViewStyle } from 'react-native'
+import React, { useContext } from 'react'
+import { StatusBar, View } from 'react-native'
 import { AppContext } from '../context/AppContext'
+import { ViewContainerProps } from '../types/interfaces'
 
-interface ScreenContainerProps {
-    style: ViewStyle
-    children: ReactNode,
-}
 
-const ScreenContainer: React.FC<ScreenContainerProps> = ({style, children}) => {
+const ScreenContainer: React.FC<ViewContainerProps> = ({style, children}) => {
     const {theme, themeName} = useContext(AppContext)
     const containerStyle = {
         flex: 1,

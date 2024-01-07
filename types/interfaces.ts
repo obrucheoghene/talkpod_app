@@ -1,3 +1,6 @@
+import { ReactNode } from "react";
+import { ViewStyle } from "react-native";
+
 export interface Meeting {
     id: string,
     title: string
@@ -7,3 +10,9 @@ export interface Meeting {
 }
 
 export type theme = 'dark' | 'light';
+
+
+export interface ViewContainerProps {
+    style?: ViewStyle
+    children: ReactNode,
+}
