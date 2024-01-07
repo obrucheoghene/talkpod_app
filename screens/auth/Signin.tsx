@@ -15,6 +15,7 @@ import ViewContainer from "../../components/ViewContainer";
 import GrayMessage from '../../assets/svg/gray-message.svg'
 import GrayLock from '../../assets/svg/gray-lock.svg'
 import GrayEyeSlash from '../../assets/svg/gray-eye-slash.svg'
+import AppButton from "../../components/AppButton";
 
 
 type ScreenProps = NativeStackScreenProps<ScreenParams, 'Signin'>;
@@ -43,11 +44,14 @@ const Signin = ({ navigation }: ScreenProps) => {
                 <GrayEyeSlash height={20} width={20} />
             </ViewContainer>
 
-            <Pressable style={buttonStyles.blueContainer}>
-                <Text style={styles.text}>Sign in</Text>
-            </Pressable>
+            <AppButton style={{
+                backgroundColor: theme.colors.primary,
+                borderRadius: theme.sizes.s60
+            }} onPress={() => navigation.navigate("Home")}>
+                <AppText >Sign in</AppText>
+            </AppButton>
 
-            <AppText style={{color: theme.colors.primary}}>Forgot your Password?</AppText>
+            <AppText style={{ color: theme.colors.primary }}>Forgot your Password?</AppText>
 
             <Divider text="or continue with" />
 
