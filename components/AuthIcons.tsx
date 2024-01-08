@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, StyleSheet, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import AppButton from './AppButton'
 
 import Google from "../assets/svg/google.svg"
