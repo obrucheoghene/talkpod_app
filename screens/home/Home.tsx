@@ -9,6 +9,9 @@ import HomeMeetingHistory from "../../components/HomeMeetingHistory";
 import ScreenContainer from "../../components/ScreenContainer";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
+import ViewContainer from "../../components/ViewContainer";
+
+import GraySearch from "../../assets/svg/gray-search.svg"
 
 
 const Home = () => {
@@ -20,6 +23,12 @@ const Home = () => {
           }}> 
 
             <HomeHeader />
+
+            <ViewContainer>
+                <GraySearch height={20} width={20} />
+                <TextInput placeholder='Email' style={inputStyles.input}
+                    placeholderTextColor={'#ccc'} />
+            </ViewContainer>
 
             <View style={inputStyles.container}>
                 <FontAwesome name='search' size={18} color="#ccc" />

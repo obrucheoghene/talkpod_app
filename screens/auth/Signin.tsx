@@ -16,6 +16,7 @@ import GrayMessage from '../../assets/svg/gray-message.svg'
 import GrayLock from '../../assets/svg/gray-lock.svg'
 import GrayEyeSlash from '../../assets/svg/gray-eye-slash.svg'
 import AppButton from "../../components/AppButton";
+import AppInput from "../../components/AppInput";
 
 
 type ScreenProps = NativeStackScreenProps<ScreenParams, 'Signin'>;
@@ -33,14 +34,12 @@ const Signin = ({ navigation }: ScreenProps) => {
             <Text style={styles.title}>Login to Your Account</Text>
             <ViewContainer>
                 <GrayMessage height={20} width={20} />
-                <TextInput placeholder='Email' style={inputStyles.input}
-                    placeholderTextColor={'#ccc'} />
+                <AppInput placeholder="Email" />
             </ViewContainer>
 
             <ViewContainer>
                 <GrayLock height={20} width={20} />
-                <TextInput placeholder='Password' style={inputStyles.input}
-                    placeholderTextColor={'#ccc'} />
+                <AppInput placeholder="Password" isSecret />
                 <GrayEyeSlash height={20} width={20} />
             </ViewContainer>
 

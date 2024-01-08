@@ -14,7 +14,8 @@ export const darkTheme = {
         disabledButton: '#3062C8',
         dark1: '#181A20',
         dark2: '#1F222A',
-        dark3: '#35383F'
+        dark3: '#35383F',
+        grey600: '#757575',
     },
     spacing: {
         xs: 4,
