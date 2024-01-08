@@ -1,14 +1,13 @@
-import { Pressable, StyleSheet, Text, TextInput } from "react-native"
+import {  StyleSheet, Text } from "react-native"
 import { useContext } from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-import { buttonStyles, inputStyles } from "../../styles/styles";
+import { AppContext } from "../../context/AppContext";
 import Divider from "../../components/Divider";
 import AuthIcons from "../../components/AuthIcons";
 import ActionText from "./ActionText";
 import { ScreenParams } from "../../App";
 import ScreenContainer from "../../components/ScreenContainer";
-import { AppContext } from "../../context/AppContext";
 import AppText from "../../components/AppText";
 import ViewContainer from "../../components/ViewContainer";
 

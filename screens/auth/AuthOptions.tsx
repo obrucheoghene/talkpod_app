@@ -1,20 +1,19 @@
-import { Button, Image, Pressable, StyleSheet, Text, View } from "react-native"
+import { StyleSheet, View } from "react-native"
+import { useContext } from "react"
+import { NativeStackScreenProps } from "@react-navigation/native-stack"
 
-// import secureLogin from '../../assets/talkpod-logo.png'
-import kingschat from '../../assets/kingschat-logo.png'
-import apple from '../../assets/apple-logo.png'
-import google from '../../assets/google-logo.png'
-import DarkCloud from '../../assets/svg/dark-cloud.svg'
 import Divider from "../../components/Divider"
 import ActionText from "./ActionText"
 import ScreenContainer from "../../components/ScreenContainer"
-import { useContext } from "react"
 import { AppContext } from "../../context/AppContext"
 import AppText from "../../components/AppText"
 import AppButton from "../../components/AppButton"
-import { NativeStackScreenProps } from "@react-navigation/native-stack"
 import { ScreenParams } from "../../App"
 
+import DarkCloud from '../../assets/svg/dark-cloud.svg'
+import Google from "../../assets/svg/google.svg"
+import Apple from "../../assets/svg/apple.svg"
+import Kingschat from "../../assets/svg/kingschat.svg"
 
 type AuthOptionsProps = NativeStackScreenProps<ScreenParams, 'AuthOptions'>;
 
@@ -31,16 +30,17 @@ const AuthOptions = ({navigation}: AuthOptionsProps) => {
       <AppText style={{fontSize: theme.sizes.xl}}>Get started</AppText>
       
       <AppButton>
-        <Image source={kingschat} style={styles.icon} />
+        <Kingschat width={24} height={24}/>
         <View><AppText  >Continue with Kingschat </AppText></View>
       </AppButton>
 
       <AppButton>
-        <Image source={google} style={styles.icon} />
+      <Google width={24} height={24}/>
+
         <View><AppText >Continue with Google</AppText></View>
       </AppButton>
       <AppButton>
-        <Image source={apple} style={styles.icon} />
+      <Apple width={24} height={24}/>
         <View><AppText >Continue with Apple</AppText></View>
       </AppButton>
 

@@ -1,25 +1,27 @@
 import React from 'react'
 import { Image, StyleSheet, View } from 'react-native'
-
-import kingschat from '../assets/kingschat-logo.png'
-import apple from '../assets/apple-logo.png'
-import google from '../assets/google-logo.png'
 import AppButton from './AppButton'
 
+import Google from "../assets/svg/google.svg"
+import Apple from "../assets/svg/apple.svg"
+import Kingschat from "../assets/svg/kingschat.svg"
+
 const AuthIcons = () => {
-  return (
-    <View style={styles.container}>
-    <AppButton style={ styles.iconButton}>
-        <Image source={kingschat} style={styles.icon} />
-    </AppButton>
-    <AppButton style={ styles.iconButton}>
-        <Image source={google} style={styles.icon} />
-    </AppButton>
-    <AppButton style={styles.iconButton}>
-        <Image source={apple} style={styles.icon} />
-    </AppButton>
-</View>
-  )
+    return (
+        <View style={styles.container}>
+            <AppButton style={styles.iconButton}>
+                <Kingschat width={24} height={24} />
+
+            </AppButton>
+            <AppButton style={styles.iconButton}>
+                <Google width={24} height={24} />
+
+            </AppButton>
+            <AppButton style={styles.iconButton}>
+                <Apple width={24} height={24} />
+            </AppButton>
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({
@@ -31,9 +33,9 @@ const styles = StyleSheet.create({
     icon: {
         width: 30,
         height: 30
-     },
-     iconButton: {
+    },
+    iconButton: {
         flexBasis: 80
-     }
+    }
 })
 export default AuthIcons
