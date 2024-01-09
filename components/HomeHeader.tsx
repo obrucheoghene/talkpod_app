@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
-import { FontAwesome } from '@expo/vector-icons';
+
+import WhiteBell from '../assets/svg/white-bell.svg'
 
 import { Avatar } from './Avatar'
 
@@ -12,8 +13,7 @@ const HomeHeader = () => {
             <Text style={styles.greet}>Good morning</Text>
             <Text style={styles.name}>Wilfred Obruche</Text>
         </View>
-        <FontAwesome name='bell-o' size={22} color="white" />
-
+    <WhiteBell width={24} height={24} />
     </View>
   )
 }
