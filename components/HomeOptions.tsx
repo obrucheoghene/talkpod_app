@@ -1,34 +1,35 @@
 import { StyleSheet, Text, View } from "react-native"
-import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 
+import WhiteCamera from '../assets/svg/white-camera.svg'
+import WhiteJoin from '../assets/svg/white-join.svg'
+import WhiteCalendar from '../assets/svg/white-calendar.svg'
 
 const HomeOptions = () => {
-  return (
-    <View style={styles.container}>
-        <View style={styles.option}>
-        <View style={[styles.cirle, styles.new]}>
-        <FontAwesome name='video-camera' size={30} color="#fff" />
+    return (
+        <View style={styles.container}>
+            <View style={styles.option}>
+                <View style={[styles.cirle, styles.new]}>
+                    <WhiteCamera width={30} height={30} />
+
+                </View>
+                <Text style={styles.text}>New</Text>
+            </View>
+            <View style={styles.option}>
+                <View style={[styles.cirle, styles.join]}>
+                    <WhiteJoin width={30} height={30} />
+                </View>
+                <Text style={styles.text}>Join</Text>
+            </View>
+            <View style={styles.option}>
+                <View style={[styles.cirle, styles.shedule]}>
+                    <WhiteCalendar width={30} height={30} />
+
+                </View>
+                <Text style={styles.text}>Schedule</Text>
+            </View>
 
         </View>
-        <Text style={styles.text}>New</Text>
-        </View>
-        <View style={styles.option}>
-        <View style={[styles.cirle, styles.join]}>
-        <FontAwesome name='plus-square' size={30} color="#fff" />
-
-        </View>
-        <Text style={styles.text}>Join</Text>
-        </View>
-        <View style={styles.option}>
-        <View style={[styles.cirle, styles.shedule]}>
-        <FontAwesome5 name='calendar-alt' size={30} color="#fff" />
-
-        </View>
-        <Text style={styles.text}>Schedule</Text>
-        </View>
-       
-    </View>
-  )
+    )
 }
 
 const styles = StyleSheet.create({
