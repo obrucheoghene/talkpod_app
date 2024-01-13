@@ -9,9 +9,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AppProvider from './context/AppContext';
 import SafeAreaInset from './components/SafeAreaInset';
+import Onboard from './screens/onboard/Onboard';
 
 export type  ScreenParams = {
   Home: undefined,
+  Onboard: undefined,
   AuthOptions: undefined,
   Signup: undefined,
   Signin: undefined,
@@ -25,13 +27,17 @@ export default function App() {
       <SafeAreaProvider>
         <SafeAreaInset>
           <NavigationContainer>
-            <Stack.Navigator initialRouteName='AuthOptions'
+            <Stack.Navigator initialRouteName='Onboard'
               screenOptions={{
                 headerStyle: {
                   backgroundColor: '#181a21',
                 },
                 headerTintColor: '#fff'
               }}>
+              <Stack.Screen name='Onboard' component={Onboard}
+                options={{
+                  headerShown: false
+                }} />
               <Stack.Screen name='Home' component={Home}
                 options={{
                   headerShown: false

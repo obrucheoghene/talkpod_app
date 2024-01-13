@@ -1,4 +1,27 @@
-import { Meeting } from "../types/interfaces";
+import { Meeting, OnboardingSlideProps } from "../types/interfaces";
+import Conference from "../assets/svg/dark-conference.svg"
+import GroupCall from "../assets/svg/dark-group-call.svg"
+import FlowerGirl from "../assets/svg/dark-flower-girl.svg"
+
+
+export const onboardingSlides: OnboardingSlideProps[] = [
+    {
+        id: 1,
+        Svg: GroupCall,
+        text: 'Video conferencing \n made easy and fast \n in your hands'
+    },
+    {
+        id: 2,
+        Svg: Conference,
+        text: 'Lots of great \n features that further \n help your work'
+    },
+    {
+        id: 3,
+        Svg: FlowerGirl,
+        text: `Let's boost your \n productivity with \n Zomo right now!`
+    },
+
+]
 
 export const meetings: Meeting[] = [
     {
