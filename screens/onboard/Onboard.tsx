@@ -14,7 +14,7 @@ const Slide: React.FC<SlideProps> = ({item}) => {
     const {Svg, text} = item
     return (
         <View style={styles.slideContainer} >
-         <Svg height={'70%'} />
+         <Svg height={'70%'} width={'100%'}/>
             <AppText style={styles.text}>{text }</AppText>
         </View>
     )
