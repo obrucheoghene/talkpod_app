@@ -1,13 +1,27 @@
-import { StyleSheet, Text, View, ScrollView } from "react-native"
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from "react-native"
 import MeetingItem from "./MeetingItem"
 import { meetings } from "../utils/data"
+import AppText from "./AppText"
+import { useContext } from "react"
+import { AppContext } from "../context/AppContext"
 
 const HomeMeetingHistory = () => {
+  const {theme} = useContext(AppContext);
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Meeting History</Text>
-        <Text style={styles.seeAll}>Sell all</Text>
+      <View style={{
+        ...styles.header,
+        borderColor: theme.colors.dark3
+        }}>
+        <AppText style={{
+          fontSize: 20,
+          fontWeight: '600'
+        }}>Meeting History</AppText>
+       <TouchableOpacity>
+       <AppText style={{
+          color: theme.colors.primary
+        }}>Sell all</AppText>
+       </TouchableOpacity>
       </View>
 
       <ScrollView style={styles.scrollView}>
@@ -23,24 +37,13 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    borderTopWidth: 0.5,
-    borderColor: '#ccc',
-    height: 50,
+    borderTopWidth: 1,
+    paddingVertical: 18,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
   },
 
-  title: {
-    color: '#fff',
-    fontSize: 18
-  },
-
-  seeAll: {
-    color: '#2d71fe',
-    fontSize: 16
-
-  },
   scrollView: {
 
   }

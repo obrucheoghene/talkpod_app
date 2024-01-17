@@ -1,29 +1,53 @@
-import { StyleSheet, View, Text, Pressable } from 'react-native'
+import { StyleSheet, View, TouchableOpacity } from 'react-native'
 import { Meeting } from '../types/interfaces'
+import { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
+import AppText from './AppText';
 
 
 const MeetingItem:React.FC<Meeting> = ({id, title, status, date, time}) => {
+    const {theme} = useContext(AppContext);
+
   return (
-    <View style={styles.container}>
-        <Text style={styles.subtitle}>{time}</Text>
+    <View style={{
+        ...styles.container,
+        borderColor: theme.colors.dark3}}>
+        <AppText style={{
+            color: theme.colors.grey300,
+            fontSize: 14
+            
+        }}>{time}</AppText>
         <View style={styles.body}>
-            <Text style={styles.subtitle}>{date}</Text>
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.subtitle}>Meeting ID: {id}</Text>
+            <AppText style={{
+                 color: theme.colors.grey300,
+                 fontSize: 14
+            }}>{date}</AppText>
+            <AppText style={{
+                fontSize: theme.sizes.m,
+                fontWeight: '600'
+            }}>{title}</AppText>
+            <AppText style={{
+                 color: theme.colors.grey300,
+                 fontSize: 14
+            }}>Meeting ID: {id}</AppText>
         </View>
-        <Pressable style={styles.button}>
-            <Text style={styles.buttonText}>
+        <TouchableOpacity style={{
+            ...styles.button,
+            borderColor: theme.colors.primary}}>
+            <AppText style={{
+                fontSize: 12,
+                color: theme.colors.primary
+            }}>
                 {status}
-            </Text>
-        </Pressable>
+            </AppText>
+        </TouchableOpacity>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
     container: {
-        borderTopWidth: 0.5,
-        borderColor: '#ccc',
+        borderTopWidth: 1,
         flexDirection: 'row',
         columnGap: 30,
         alignItems: 'center',
@@ -31,18 +55,10 @@ const styles = StyleSheet.create({
     },
     body: {
         flexGrow: 1,
-        rowGap: 5
+        rowGap: 8
     },
-    title: {
-        color: '#fff',
-        fontSize: 18
-    },
-    subtitle: {
-        color: '#ccc',
-        fontSize: 12
-    },
+
     button: {
-        borderColor: '#2d71fe',
         borderWidth: 1,
         paddingHorizontal: 10,
         paddingVertical: 4,

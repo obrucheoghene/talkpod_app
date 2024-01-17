@@ -1,5 +1,5 @@
 import { ReactNode, useContext } from "react"
-import { Pressable, ViewStyle } from "react-native"
+import { TouchableOpacity, ViewStyle } from "react-native"
 import { AppContext } from "../context/AppContext"
 
 interface AppButtonProps {
@@ -24,9 +24,9 @@ const AppButton: React.FC<AppButtonProps> = ({style, onPress, children}) => {
     columnGap: theme.spacing.s,
   }
   return (
-    <Pressable style={[defaultStyle, style]} onPress={onPress}>
+    <TouchableOpacity style={[defaultStyle, style]} onPress={onPress}>
       {children}
-    </Pressable>
+    </TouchableOpacity>
   )
 }
 
