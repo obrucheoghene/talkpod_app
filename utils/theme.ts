@@ -16,6 +16,7 @@ export const darkTheme = {
         dark2: '#1F222A',
         dark3: '#35383F',
         grey600: '#757575',
+        grey300: '#E0E0E0',
     },
     spacing: {
         xs: 4,
