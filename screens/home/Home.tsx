@@ -10,11 +10,19 @@ import ViewContainer from "../../components/ViewContainer";
 
 import GraySearch from "../../assets/svg/gray-search.svg"
 import AppInput from "../../components/AppInput";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { ScreenParams } from "../../App";
+
+type ScreenProps = NativeStackScreenProps<ScreenParams, 'Home'>;
 
 
-const Home = () => {
+const Home = ({ navigation }: ScreenProps) => {
+    
     const {theme} = useContext(AppContext)
 
+    const openMeetingHistory = () => {
+        navigation.push('MeetingHistory')
+    }
     return (
         <ScreenContainer style={{
             rowGap: theme.spacing.b,
@@ -29,7 +37,7 @@ const Home = () => {
 
             <HomeOptions/>
 
-            <HomeMeetingHistory/>
+            <HomeMeetingHistory openMeetingHistory={openMeetingHistory}/>
         </ScreenContainer>
     )
 }

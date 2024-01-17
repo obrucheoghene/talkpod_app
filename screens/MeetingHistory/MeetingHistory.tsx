@@ -2,17 +2,16 @@ import React from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import MeetingItem from '../../components/MeetingItem'
 import { meetings } from '../../utils/data'
+import ScreenContainer from '../../components/ScreenContainer'
 
 const MeetingHistory = () => {
   return (
-    <View style={styles.container}>
-        <View>
-           <Text style={styles.title}>Meeting History</Text> 
-        </View>
+    <ScreenContainer>
+
               <ScrollView style={styles.scrollView}>
         {meetings.map(meeting => <MeetingItem key={meeting.id} {...meeting}/>)}
       </ScrollView>
-    </View>
+    </ScreenContainer>
   )
 }
 

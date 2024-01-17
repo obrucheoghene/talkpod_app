@@ -5,7 +5,10 @@ import AppText from "./AppText"
 import { useContext } from "react"
 import { AppContext } from "../context/AppContext"
 
-const HomeMeetingHistory = () => {
+interface HomeMeetingHistoryProps {
+  openMeetingHistory: () => void
+}
+const HomeMeetingHistory:React.FC<HomeMeetingHistoryProps> = ({openMeetingHistory}) => {
   const {theme} = useContext(AppContext);
   return (
     <View style={styles.container}>
@@ -17,7 +20,7 @@ const HomeMeetingHistory = () => {
           fontSize: 20,
           fontWeight: '600'
         }}>Meeting History</AppText>
-       <TouchableOpacity>
+       <TouchableOpacity onPress={openMeetingHistory }>
        <AppText style={{
           color: theme.colors.primary
         }}>Sell all</AppText>

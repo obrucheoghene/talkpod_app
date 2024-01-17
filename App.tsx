@@ -57,7 +57,9 @@ export default function App() {
               options={{
                 headerShown: false
               }}/>
-              <Stack.Screen name='MeetingHistory' component={MeetingHistory} />
+              <Stack.Screen name='MeetingHistory' options={{
+                title: 'Meeting History'
+              }} component={MeetingHistory} />
             </Stack.Navigator>
 
           </NavigationContainer>
