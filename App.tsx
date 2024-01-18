@@ -3,13 +3,14 @@ import AuthOptions from './screens/auth/AuthOptions';
 import Signup from './screens/auth/Signup';
 import Signin from './screens/auth/Signin';
 import Home from './screens/home/Home';
-import MeetingHistory from './screens/MeetingHistory/MeetingHistory';
+import MeetingHistory from './screens/meetingHistory/MeetingHistory';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AppProvider from './context/AppContext';
 import SafeAreaInset from './components/SafeAreaInset';
 import Onboard from './screens/onboard/Onboard';
+import JoinMeeting from './screens/joinMeeting/JoinMeeting';
 
 export type  ScreenParams = {
   Home: undefined,
@@ -18,6 +19,7 @@ export type  ScreenParams = {
   Signup: undefined,
   Signin: undefined,
   MeetingHistory: undefined,
+  JoinMeeting: undefined,
 }
 const Stack = createNativeStackNavigator<ScreenParams>();
 
@@ -58,8 +60,12 @@ export default function App() {
                 headerShown: false
               }}/>
               <Stack.Screen name='MeetingHistory' options={{
-                title: 'Meeting History'
+                title: 'Meeting History',
               }} component={MeetingHistory} />
+
+              <Stack.Screen name='JoinMeeting' options={{
+                title: 'Join Meeting',
+              }} component={JoinMeeting} />
             </Stack.Navigator>
 
           </NavigationContainer>

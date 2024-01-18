@@ -3,8 +3,14 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import WhiteCamera from '../assets/svg/white-camera.svg'
 import WhiteJoin from '../assets/svg/white-join.svg'
 import WhiteCalendar from '../assets/svg/white-calendar.svg'
+import { useNavigation } from "@react-navigation/native"
+import { ScreenParams } from "../App"
+import { NativeStackScreenProps } from "@react-navigation/native-stack"
+
+type ScreenProps = NativeStackScreenProps<ScreenParams, 'Home'>;
 
 const HomeOptions = () => {
+    const {navigation} = useNavigation<ScreenProps>()
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.option}>
@@ -14,7 +20,7 @@ const HomeOptions = () => {
                 </View>
                 <Text style={styles.text}>New</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.option}>
+            <TouchableOpacity style={styles.option} onPress={ () => navigation.navigate('JoinMeeting')}>
                 <View style={[styles.cirle, styles.join]}>
                     <WhiteJoin width={30} height={30} />
                 </View>
