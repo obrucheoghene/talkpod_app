@@ -29,7 +29,7 @@ export default function App() {
       <SafeAreaProvider>
         <SafeAreaInset>
           <NavigationContainer>
-            <Stack.Navigator initialRouteName='AuthOptions'
+            <Stack.Navigator initialRouteName='JoinMeeting'
               screenOptions={{
                 headerStyle: {
                   backgroundColor: '#181a21',
