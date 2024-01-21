@@ -11,8 +11,12 @@ import AppProvider from './context/AppContext';
 import SafeAreaInset from './components/SafeAreaInset';
 import Onboard from './screens/onboard/Onboard';
 import JoinMeeting from './screens/joinMeeting/JoinMeeting';
+import { useFonts } from 'expo-font';
 
-export type  ScreenParams = {
+
+
+
+export type ScreenParams = {
   Home: undefined,
   Onboard: undefined,
   AuthOptions: undefined,
@@ -24,6 +28,18 @@ export type  ScreenParams = {
 const Stack = createNativeStackNavigator<ScreenParams>();
 
 export default function App() {
+
+  const [fontsLoaded] = useFonts({
+    'Urbanist-Bold': require('./assets/fonts/Urbanist-Bold.ttf'),
+    'Urbanist-Light': require('./assets/fonts/Urbanist-Light.ttf'),
+    'Urbanist-Mediumm': require('./assets/fonts/Urbanist-Mediumm.ttf'),
+    'Urbanist-Regular': require('./assets/fonts/Urbanist-Regular.ttf'),
+    'Urbanist-Semibold': require('./assets/fonts/Urbanist-Semibold.ttf'),
+  })
+
+  if (!fontsLoaded) {
+    return undefined
+  }
   return (
     <AppProvider>
       <SafeAreaProvider>
@@ -50,15 +66,15 @@ export default function App() {
                   headerShown: false
                 }} />
 
-              <Stack.Screen name='Signup' component={Signup} 
-              options={{
-                headerShown: false
-              }}/>
+              <Stack.Screen name='Signup' component={Signup}
+                options={{
+                  headerShown: false
+                }} />
 
-              <Stack.Screen name='Signin' component={Signin} 
-              options={{
-                headerShown: false
-              }}/>
+              <Stack.Screen name='Signin' component={Signin}
+                options={{
+                  headerShown: false
+                }} />
               <Stack.Screen name='MeetingHistory' options={{
                 title: 'Meeting History',
               }} component={MeetingHistory} />

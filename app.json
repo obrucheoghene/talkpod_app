@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -25,20 +23,6 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "plugin": [
-      [
-        "expo-font", 
-        {
-          "fonts": [
-            "./assets/fonts/Urbanist-Bold.ttf",
-            "./assets/fonts/Urbanist-Light.ttf",
-            "./assets/fonts/Urbanist-Medium.ttf",
-            "./assets/fonts/Urbanist-Regular.ttf",
-            "./assets/fonts/Urbanist-SemiBold.ttf"
-        ]
-        }
-      ]
-    ]
+    }
   }
 }
