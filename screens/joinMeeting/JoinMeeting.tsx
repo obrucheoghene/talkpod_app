@@ -7,6 +7,9 @@ import AppInput from "../../components/AppInput";
 import ViewContainer from "../../components/ViewContainer";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
+import Spacer from "../../components/Spacer";
+import { AppFonts } from "../../types/interfaces";
+import Divider from "../../components/Divider";
 
 type ScreenProps = NativeStackScreenProps<ScreenParams, 'JoinMeeting'>;
 
@@ -15,19 +18,24 @@ const JoinMeeting = ({ navigation }: ScreenProps) => {
 
   return (
     <ScreenContainer style={{ rowGap: theme.sizes.b}}>
-
-      <AppText style={styles.label}>Meeting Id</AppText>
+      <Spacer height={2}/>
+      <AppText style={styles.label} font={AppFonts["Urbanist-Medium"]}>Meeting Id</AppText>
       <ViewContainer>
         <AppInput placeholder="Email" />
       </ViewContainer>
 
-      <AppText style={styles.label}>Display Name</AppText>
+      <AppText style={styles.label} font={AppFonts["Urbanist-Medium"]}>Display Name</AppText>
       <ViewContainer>
         <AppInput placeholder="Email" />
       </ViewContainer>
+      <Divider/>
+
+      <AppText >Join Options</AppText>
     </ScreenContainer>
 
-  )
+  
+
+  ) 
 }
 
 const styles = StyleSheet.create({
