@@ -32,9 +32,9 @@ export default function App() {
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('./assets/fonts/Urbanist-Bold.ttf'),
     'Urbanist-Light': require('./assets/fonts/Urbanist-Light.ttf'),
-    'Urbanist-Mediumm': require('./assets/fonts/Urbanist-Mediumm.ttf'),
+    'Urbanist-Medium': require('./assets/fonts/Urbanist-Medium.ttf'),
     'Urbanist-Regular': require('./assets/fonts/Urbanist-Regular.ttf'),
-    'Urbanist-Semibold': require('./assets/fonts/Urbanist-Semibold.ttf'),
+    'Urbanist-SemiBold': require('./assets/fonts/Urbanist-SemiBold.ttf'),
   })
 
   if (!fontsLoaded) {

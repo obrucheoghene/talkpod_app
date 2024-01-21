@@ -33,7 +33,7 @@ export const darkTheme = {
         m: 18,
         l: 24,
         xl: 48,
-        
+
         s4: 4,
         s8: 8,
         s16: 16,
@@ -43,7 +43,7 @@ export const darkTheme = {
         s50: 50,
         s60: 60
     },
-    
+
 }
 
 export const lightTheme = {
@@ -54,3 +54,6 @@ export const lightTheme = {
         background: '#ffffff',
     }
 }
+
+
+

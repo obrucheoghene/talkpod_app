@@ -23,3 +23,11 @@ export interface OnboardingSlideProps {
     Svg: any,
     text: string,
 }
+
+export enum AppFonts {
+    'Urbanist-Bold',
+    'Urbanist-Light',
+    'Urbanist-Medium',
+    'Urbanist-Regular',
+    'Urbanist-SemiBold'
+}
