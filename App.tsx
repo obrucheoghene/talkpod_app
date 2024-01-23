@@ -12,6 +12,7 @@ import SafeAreaInset from './components/SafeAreaInset';
 import Onboard from './screens/onboard/Onboard';
 import JoinMeeting from './screens/joinMeeting/JoinMeeting';
 import { useFonts } from 'expo-font';
+import ScheduleMeeting from './screens/scheduleMeeting/ScheduleMeeting';
 
 
 
@@ -24,6 +25,7 @@ export type ScreenParams = {
   Signin: undefined,
   MeetingHistory: undefined,
   JoinMeeting: undefined,
+  ScheduleMeeting: undefined,
 }
 const Stack = createNativeStackNavigator<ScreenParams>();
 
@@ -45,7 +47,7 @@ export default function App() {
       <SafeAreaProvider>
         <SafeAreaInset>
           <NavigationContainer>
-            <Stack.Navigator initialRouteName='JoinMeeting'
+            <Stack.Navigator initialRouteName='ScheduleMeeting'
               screenOptions={{
                 headerStyle: {
                   backgroundColor: '#181a21',
@@ -82,6 +84,10 @@ export default function App() {
               <Stack.Screen name='JoinMeeting' options={{
                 title: 'Join Meeting',
               }} component={JoinMeeting} />
+              
+              <Stack.Screen name='ScheduleMeeting' options={{
+                title: 'Schedule Meeting',
+              }} component={ScheduleMeeting} />
             </Stack.Navigator>
 
           </NavigationContainer>
