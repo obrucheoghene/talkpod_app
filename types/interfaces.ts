@@ -8,6 +8,7 @@ export interface Meeting {
     status: string
     time: string,
     date: string,
+    isDone?: boolean
 }
 
 export type theme = 'dark' | 'light';

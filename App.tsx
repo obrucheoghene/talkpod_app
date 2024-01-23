@@ -13,6 +13,7 @@ import Onboard from './screens/onboard/Onboard';
 import JoinMeeting from './screens/joinMeeting/JoinMeeting';
 import { useFonts } from 'expo-font';
 import ScheduleMeeting from './screens/scheduleMeeting/ScheduleMeeting';
+import Meetings from './screens/meetings/Meetings';
 
 
 
@@ -23,6 +24,7 @@ export type ScreenParams = {
   AuthOptions: undefined,
   Signup: undefined,
   Signin: undefined,
+  Meetings: undefined,
   MeetingHistory: undefined,
   JoinMeeting: undefined,
   ScheduleMeeting: undefined,
@@ -47,7 +49,7 @@ export default function App() {
       <SafeAreaProvider>
         <SafeAreaInset>
           <NavigationContainer>
-            <Stack.Navigator initialRouteName='ScheduleMeeting'
+            <Stack.Navigator initialRouteName='Meetings'
               screenOptions={{
                 headerStyle: {
                   backgroundColor: '#181a21',
@@ -88,6 +90,10 @@ export default function App() {
               <Stack.Screen name='ScheduleMeeting' options={{
                 title: 'Schedule Meeting',
               }} component={ScheduleMeeting} />
+
+              <Stack.Screen name='Meetings' options={{
+                title: 'My Meetings',
+              }} component={Meetings} />
             </Stack.Navigator>
 
           </NavigationContainer>

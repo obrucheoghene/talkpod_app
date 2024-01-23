@@ -90,7 +90,7 @@ const ScheduleMeeting = ({ navigation }: ScreenProps) => {
         backgroundColor: theme.colors.primary,
         borderRadius: theme.sizes.s60
       }} >
-        <AppText font={AppFonts['Urbanist-Bold']}>Join</AppText>
+        <AppText font={AppFonts['Urbanist-Bold']}>Schedule</AppText>
       </AppButton>
     </ScreenContainer>
 

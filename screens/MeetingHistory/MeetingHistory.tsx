@@ -8,8 +8,8 @@ const MeetingHistory = () => {
   return (
     <ScreenContainer>
 
-              <ScrollView style={styles.scrollView}>
-        {meetings.map(meeting => <MeetingItem key={meeting.id} {...meeting}/>)}
+      <ScrollView style={styles.scrollView}>
+        {meetings.map(meeting => <MeetingItem key={meeting.id} {...meeting} />)}
       </ScrollView>
     </ScreenContainer>
   )
@@ -17,17 +17,17 @@ const MeetingHistory = () => {
 
 
 const styles = StyleSheet.create({
-    container: {
-        paddingHorizontal: 20,
-      flex: 1
-    },
-    title: {
-        color: '#fff',
-        fontSize: 24,
-        marginBottom: 10
-      },
-    scrollView: {
-    }
+  container: {
+    paddingHorizontal: 20,
+    flex: 1
+  },
+  title: {
+    color: '#fff',
+    fontSize: 24,
+    marginBottom: 10
+  },
+  scrollView: {
+  }
 
 })
 
