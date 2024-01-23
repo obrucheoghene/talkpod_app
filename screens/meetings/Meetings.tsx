@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
+import { ScrollView, StyleSheet } from 'react-native'
+
 import ScreenContainer from '../../components/ScreenContainer'
 import AppText from '../../components/AppText'
-import { ScrollView, StyleSheet } from 'react-native'
 import { meetings } from '../../utils/data'
 import MeetingItem from '../../components/MeetingItem'
 import { AppFonts } from '../../types/interfaces'
