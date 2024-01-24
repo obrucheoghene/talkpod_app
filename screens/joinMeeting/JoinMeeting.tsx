@@ -1,11 +1,12 @@
-import AppText from "../../components/AppText"
-import { ScreenParams } from "../../App";
+import { useContext } from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { StyleSheet, Switch, View } from "react-native";
+
+import AppText from "../../components/AppText"
+import { ScreenParams } from "../../App";
 import ScreenContainer from "../../components/ScreenContainer";
 import AppInput from "../../components/AppInput";
 import ViewContainer from "../../components/ViewContainer";
-import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import Spacer from "../../components/Spacer";
 import { AppFonts } from "../../types/interfaces";
@@ -35,11 +36,11 @@ const JoinMeeting = ({ navigation }: ScreenProps) => {
         <AppText font={AppFonts['Urbanist-Medium']} >Join Options</AppText>
 
         <View style={styles.option}>
-          <AppText font={AppFonts['Urbanist-Medium']} >Turn OFF my video </AppText>
+          <AppText font={AppFonts['Urbanist-Medium']} >Turn ON my video </AppText>
           <Switch />
         </View>
         <View style={styles.option}>
-          <AppText font={AppFonts['Urbanist-Medium']} >Turn OFF my audio </AppText>
+          <AppText font={AppFonts['Urbanist-Medium']} >Turn ON my audio </AppText>
           <Switch />
         </View>
       </View>

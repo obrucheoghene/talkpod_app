@@ -9,11 +9,15 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack"
 
 type ScreenProps = NativeStackScreenProps<ScreenParams, 'Home'>;
 
-const HomeOptions = () => {
+interface HomeOptionProps {
+    handleOpenNewMeetingSheet: () => void
+}
+
+const HomeOptions: React.FC<HomeOptionProps> = ({handleOpenNewMeetingSheet}) => {
     const {navigation} = useNavigation<ScreenProps>()
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={styles.option}>
+            <TouchableOpacity style={styles.option} onPress={handleOpenNewMeetingSheet}>
                 <View style={[styles.cirle, styles.new]}>
                     <WhiteCamera width={30} height={30} />
 

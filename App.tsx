@@ -1,3 +1,6 @@
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
 import { StyleSheet, StatusBar, } from 'react-native';
 import AuthOptions from './screens/auth/AuthOptions';
 import Signup from './screens/auth/Signup';
@@ -5,8 +8,7 @@ import Signin from './screens/auth/Signin';
 import Home from './screens/home/Home';
 import MeetingHistory from './screens/meetingHistory/MeetingHistory';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+
 import AppProvider from './context/AppContext';
 import SafeAreaInset from './components/SafeAreaInset';
 import Onboard from './screens/onboard/Onboard';
@@ -14,6 +16,7 @@ import JoinMeeting from './screens/joinMeeting/JoinMeeting';
 import { useFonts } from 'expo-font';
 import ScheduleMeeting from './screens/scheduleMeeting/ScheduleMeeting';
 import Meetings from './screens/meetings/Meetings';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 
 
@@ -45,11 +48,12 @@ export default function App() {
     return undefined
   }
   return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
     <AppProvider>
       <SafeAreaProvider>
         <SafeAreaInset>
           <NavigationContainer>
-            <Stack.Navigator initialRouteName='Meetings'
+            <Stack.Navigator initialRouteName='AuthOptions'
               screenOptions={{
                 headerStyle: {
                   backgroundColor: '#181a21',
@@ -100,6 +104,7 @@ export default function App() {
         </SafeAreaInset>
       </SafeAreaProvider>
     </AppProvider>
+    </GestureHandlerRootView>
   );
 }
 
