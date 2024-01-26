@@ -29,7 +29,7 @@ const JoinMeeting = ({ navigation }: ScreenProps) => {
 
         <AppText style={styles.label} font={AppFonts["Urbanist-Medium"]}>Display Name</AppText>
         <ViewContainer>
-          <AppInput placeholder="Email" />
+          <AppInput placeholder="Display namme" />
         </ViewContainer>
         <Divider />
 
