@@ -3,7 +3,7 @@ import { useContext } from "react"
 import { NativeStackScreenProps } from "@react-navigation/native-stack"
 
 import Divider from "../../components/Divider"
-import ActionText from "./ActionText"
+import ActionText from "../../components/ActionText"
 import ScreenContainer from "../../components/ScreenContainer"
 import { AppContext } from "../../context/AppContext"
 import AppText from "../../components/AppText"

@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Pressable } from "react-native"
-import AppText from "../../components/AppText"
+import AppText from "./AppText"
 import { useContext } from "react"
-import { AppContext } from "../../context/AppContext"
+import { AppContext } from "../context/AppContext"
 
 interface ActionTextProps {
     question: string,

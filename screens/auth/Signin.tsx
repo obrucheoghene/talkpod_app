@@ -5,7 +5,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { AppContext } from "../../context/AppContext";
 import Divider from "../../components/Divider";
 import AuthIcons from "../../components/AuthIcons";
-import ActionText from "./ActionText";
+import ActionText from "../../components/ActionText";
 import { ScreenParams } from "../../App";
 import ScreenContainer from "../../components/ScreenContainer";
 import AppText from "../../components/AppText";

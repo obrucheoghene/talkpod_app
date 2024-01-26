@@ -1,6 +1,5 @@
 import { StyleSheet, View, ScrollView, TouchableOpacity } from "react-native"
 import { useContext } from "react"
-import BottomSheet from "@gorhom/bottom-sheet/lib/typescript/components/bottomSheet/BottomSheet"
 
 import MeetingItem from "./MeetingItem"
 import { meetings } from "../utils/data"
