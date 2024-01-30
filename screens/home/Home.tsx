@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native"
 import { useCallback, useContext, useMemo, useRef } from "react";
-import BottomSheet from "@gorhom/bottom-sheet"
+import BottomSheet, { BottomSheetModal } from "@gorhom/bottom-sheet"
 
 import { AppContext } from "../../context/AppContext";
 import HomeHeader from "../../components/HomeHeader"
@@ -25,14 +25,14 @@ type ScreenProps = NativeStackScreenProps<ScreenParams, 'Home'>;
 const Home = ({ navigation }: ScreenProps) => {
 
     const { theme } = useContext(AppContext)
-    const bottomSheetRef = useRef<BottomSheet>(null)
+    const bottomSheetModalRef = useRef<BottomSheetModal>(null)
     const snapPoints = useMemo(() => ['35%'], [])
 
     const handleSheetChanges = useCallback((index: number) => {
         console.log('handleSheetChanges', index);
     }, []);
 
-    const handleOpenNewMeetingSheet = () => bottomSheetRef.current?.expand()
+    const handleOpenNewMeetingSheet = () => bottomSheetModalRef.current?.present()
 
     const openMeetingHistory = () => {
         navigation.push('MeetingHistory')
@@ -53,9 +53,9 @@ const Home = ({ navigation }: ScreenProps) => {
 
             <HomeMeetingHistory openMeetingHistory={openMeetingHistory} />
 
-            <BottomSheet
-                
-                ref={bottomSheetRef}
+            <BottomSheetModal
+
+                ref={bottomSheetModalRef}
                 index={0}
                 handleIndicatorStyle={{ backgroundColor: theme.colors.dark3 }}
                 backgroundStyle={{
@@ -67,25 +67,29 @@ const Home = ({ navigation }: ScreenProps) => {
 
                 snapPoints={snapPoints}
                 enablePanDownToClose={true}>
-                <Spacer height={5} />
-                <AppText style={{ textAlign: 'center', fontSize: 24 }} font={AppFonts['Urbanist-Bold']}>Start New Meeting</AppText>
-                
-                <AppText  font={AppFonts["Urbanist-Medium"]}>Display Name</AppText>
-        <ViewContainer>
-          <AppInput placeholder="Display namme" />
-        </ViewContainer>
-        <Divider />
+                <View>
 
 
-                <View style={styles.option}>
-                    <AppText font={AppFonts['Urbanist-Medium']} >Turn ON my video </AppText>
-                    <Switch />
+                    <Spacer height={5} />
+                    <AppText style={{ textAlign: 'center', fontSize: 24 }} font={AppFonts['Urbanist-Bold']}>Start New Meeting</AppText>
+
+                    <AppText font={AppFonts["Urbanist-Medium"]}>Display Name</AppText>
+                    <ViewContainer>
+                        <AppInput placeholder="Display namme" />
+                    </ViewContainer>
+                    <Divider />
+
+
+                    <View style={styles.option}>
+                        <AppText font={AppFonts['Urbanist-Medium']} >Turn ON my video </AppText>
+                        <Switch />
+                    </View>
+                    <View style={styles.option}>
+                        <AppText font={AppFonts['Urbanist-Medium']} >Turn ON my audio </AppText>
+                        <Switch />
+                    </View>
                 </View>
-                <View style={styles.option}>
-                    <AppText font={AppFonts['Urbanist-Medium']} >Turn ON my audio </AppText>
-                    <Switch />
-                </View>
-            </BottomSheet>
+            </BottomSheetModal>
         </ScreenContainer>
     )
 }

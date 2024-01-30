@@ -17,6 +17,7 @@ import { useFonts } from 'expo-font';
 import ScheduleMeeting from './screens/scheduleMeeting/ScheduleMeeting';
 import Meetings from './screens/meetings/Meetings';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 
 
 
@@ -49,6 +50,7 @@ export default function App() {
   }
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
+    <BottomSheetModalProvider>
     <AppProvider>
       <SafeAreaProvider>
         <SafeAreaInset>
@@ -104,6 +106,7 @@ export default function App() {
         </SafeAreaInset>
       </SafeAreaProvider>
     </AppProvider>
+    </BottomSheetModalProvider>
     </GestureHandlerRootView>
   );
 }
