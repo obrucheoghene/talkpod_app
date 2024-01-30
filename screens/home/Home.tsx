@@ -26,7 +26,7 @@ const Home = ({ navigation }: ScreenProps) => {
 
     const { theme } = useContext(AppContext)
     const bottomSheetRef = useRef<BottomSheet>(null)
-    const snapPoints = useMemo(() => ['25%', '50%'], [])
+    const snapPoints = useMemo(() => ['35%'], [])
 
     const handleSheetChanges = useCallback((index: number) => {
         console.log('handleSheetChanges', index);
@@ -54,8 +54,9 @@ const Home = ({ navigation }: ScreenProps) => {
             <HomeMeetingHistory openMeetingHistory={openMeetingHistory} />
 
             <BottomSheet
+                
                 ref={bottomSheetRef}
-                index={1}
+                index={0}
                 handleIndicatorStyle={{ backgroundColor: theme.colors.dark3 }}
                 backgroundStyle={{
                     backgroundColor: theme.colors.dark2,
