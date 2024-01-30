@@ -18,6 +18,7 @@ import { AppFonts } from "../../types/interfaces";
 import Spacer from "../../components/Spacer";
 import { Switch } from "react-native-gesture-handler";
 import Divider from "../../components/Divider";
+import AppButton from "../../components/AppButton";
 
 type ScreenProps = NativeStackScreenProps<ScreenParams, 'Home'>;
 
@@ -33,6 +34,7 @@ const Home = ({ navigation }: ScreenProps) => {
     }, []);
 
     const handleOpenNewMeetingSheet = () => bottomSheetModalRef.current?.present()
+    const handleHideNewMeetingSheet = () => bottomSheetModalRef.current?.close()
 
     const openMeetingHistory = () => {
         navigation.push('MeetingHistory')
@@ -67,16 +69,13 @@ const Home = ({ navigation }: ScreenProps) => {
 
                 snapPoints={snapPoints}
                 enablePanDownToClose={true}>
-                <View>
+                <View style={styles.bottomSheetContainer}>
 
-
-                    <Spacer height={5} />
                     <AppText style={{ textAlign: 'center', fontSize: 24 }} font={AppFonts['Urbanist-Bold']}>Start New Meeting</AppText>
 
-                    <AppText font={AppFonts["Urbanist-Medium"]}>Display Name</AppText>
-                    <ViewContainer>
-                        <AppInput placeholder="Display namme" />
-                    </ViewContainer>
+                    {/* <ViewContainer style={{ backgroundColor: theme.colors.dark1}}>
+                        <AppInput placeholder="Display name" forBottomSheet style={{ backgroundColor: theme.colors.dark1}} />
+                    </ViewContainer> */}
                     <Divider />
 
 
@@ -87,6 +86,25 @@ const Home = ({ navigation }: ScreenProps) => {
                     <View style={styles.option}>
                         <AppText font={AppFonts['Urbanist-Medium']} >Turn ON my audio </AppText>
                         <Switch />
+                    </View>
+
+                    <View style={styles.buttonGroup}>
+                        <AppButton style={{
+                            backgroundColor: theme.colors.dark3,
+                            borderRadius: theme.sizes.s60,
+                            flexGrow: 1
+                        }} onPress={handleHideNewMeetingSheet}>
+                            <AppText >Cancel</AppText>
+                        </AppButton>
+
+                        <AppButton style={{
+                            backgroundColor: theme.colors.primary,
+                            borderRadius: theme.sizes.s60,
+                            flexGrow: 1
+                        }} onPress={handleHideNewMeetingSheet}>
+                            <AppText >Start</AppText>
+                        </AppButton>
+
                     </View>
                 </View>
             </BottomSheetModal>
@@ -101,11 +119,23 @@ const styles = StyleSheet.create({
         flex: 1,
         rowGap: 15,
     },
+    bottomSheetContainer: {
+        flex: 1,
+        paddingHorizontal: 20,
+        paddingTop: 10,
+        rowGap: 15
+    },
     option: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
 
+    },
+    buttonGroup: {
+        flexDirection: "row",
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        columnGap: 20
     }
 })
 

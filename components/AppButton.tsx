@@ -14,7 +14,7 @@ const AppButton: React.FC<AppButtonProps> = ({style, onPress, children}) => {
   const defaultStyle: ViewStyle = {
     backgroundColor: theme.colors.dark2,
     flexDirection: 'row',
-    height: 60,
+    height: 58,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'stretch',
