@@ -10,27 +10,29 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack"
 type ScreenProps = NativeStackScreenProps<ScreenParams, 'Home'>;
 
 interface HomeOptionProps {
-    handleOpenNewMeetingSheet: () => void
+    openNewMeetingSheet: () => void
+    openJoinMeeting: () => void
+    openScheduleMeeting: () => void
 }
 
-const HomeOptions: React.FC<HomeOptionProps> = ({handleOpenNewMeetingSheet}) => {
+const HomeOptions: React.FC<HomeOptionProps> = ({openNewMeetingSheet, openJoinMeeting, openScheduleMeeting}) => {
     const {navigation} = useNavigation<ScreenProps>()
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={styles.option} onPress={handleOpenNewMeetingSheet}>
+            <TouchableOpacity style={styles.option} onPress={openNewMeetingSheet}>
                 <View style={[styles.cirle, styles.new]}>
                     <WhiteCamera width={30} height={30} />
 
                 </View>
                 <Text style={styles.text}>New</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.option} onPress={ () => navigation.navigate('JoinMeeting')}>
+            <TouchableOpacity style={styles.option} onPress={openJoinMeeting}>
                 <View style={[styles.cirle, styles.join]}>
                     <WhiteJoin width={30} height={30} />
                 </View>
                 <Text style={styles.text}>Join</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.option}>
+            <TouchableOpacity style={styles.option} onPress={openScheduleMeeting}>
                 <View style={[styles.cirle, styles.shedule]}>
                     <WhiteCalendar width={30} height={30} />
 

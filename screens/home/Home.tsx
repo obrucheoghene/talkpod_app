@@ -33,8 +33,10 @@ const Home = ({ navigation }: ScreenProps) => {
         console.log('handleSheetChanges', index);
     }, []);
 
-    const handleOpenNewMeetingSheet = () => bottomSheetModalRef.current?.present()
+    const openNewMeetingSheet = () => bottomSheetModalRef.current?.present()
     const handleHideNewMeetingSheet = () => bottomSheetModalRef.current?.close()
+    const openJoinMeeting = () => navigation.push('JoinMeeting')
+    const openScheduleMeeting = () => navigation.push('ScheduleMeeting')
 
     const openMeetingHistory = () => {
         navigation.push('MeetingHistory')
@@ -51,7 +53,11 @@ const Home = ({ navigation }: ScreenProps) => {
                 <AppInput placeholder="Search" />
             </ViewContainer>
 
-            <HomeOptions handleOpenNewMeetingSheet={handleOpenNewMeetingSheet} />
+            <HomeOptions 
+            openNewMeetingSheet={openNewMeetingSheet}
+            openJoinMeeting={openJoinMeeting}
+            openScheduleMeeting={openScheduleMeeting}
+            />
 
             <HomeMeetingHistory openMeetingHistory={openMeetingHistory} />
 
