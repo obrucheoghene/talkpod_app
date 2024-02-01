@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native"
-import { useCallback, useContext, useMemo, useRef } from "react";
-import BottomSheet, { BottomSheetModal } from "@gorhom/bottom-sheet"
+import {  useContext, useMemo, useRef } from "react";
+import { BottomSheetModal } from "@gorhom/bottom-sheet"
 
 import { AppContext } from "../../context/AppContext";
 import HomeHeader from "../../components/HomeHeader"
@@ -15,7 +15,6 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { ScreenParams } from "../../App";
 import AppText from "../../components/AppText";
 import { AppFonts } from "../../types/interfaces";
-import Spacer from "../../components/Spacer";
 import { Switch } from "react-native-gesture-handler";
 import Divider from "../../components/Divider";
 import AppButton from "../../components/AppButton";
@@ -28,10 +27,6 @@ const Home = ({ navigation }: ScreenProps) => {
     const { theme } = useContext(AppContext)
     const bottomSheetModalRef = useRef<BottomSheetModal>(null)
     const snapPoints = useMemo(() => ['35%'], [])
-
-    const handleSheetChanges = useCallback((index: number) => {
-        console.log('handleSheetChanges', index);
-    }, []);
 
     const openNewMeetingSheet = () => bottomSheetModalRef.current?.present()
     const handleHideNewMeetingSheet = () => bottomSheetModalRef.current?.close()
