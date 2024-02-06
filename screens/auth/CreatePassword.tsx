@@ -1,9 +1,10 @@
 import React from 'react'
 import { View } from 'react-native'
+import AppText from '../../components/AppText'
 
 const CreatePassword = () => {
   return (
-    <View>CreatePassword</View>
+    <View><AppText>CreatePassword</AppText></View>
   )
 }
 
